@@ -26,3 +26,40 @@ I enjoy photography and content creation, combining creativity with digital skil
 ## 📫 Let’s Connect  
 - LinkedIn: https://www.linkedin.com/in/muhammad-bilal-628058382/  
 - Email: mubila02@wsc.edu
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Inventory {
+
+    public static void main(String[] args) {
+
+        // Create list
+        List<Book> inventory = new ArrayList<>();
+
+        // Total value
+        double totalValue = 0.0;
+
+        // Add books
+        inventory.add(new Book("ABC 123", 9.99));
+        inventory.add(new Book("Java for Dummies", 29.99));
+        inventory.add(new Book("Very Expensive Book", 1234.56));
+
+        // Header
+        System.out.println("=================================");
+        System.out.println("        Book Store Inventory");
+        System.out.println("=================================");
+
+        // Display books and calculate total
+        for (Book book : inventory) {
+            System.out.println(book);
+            totalValue += book.getPrice();
+        }
+
+        System.out.println("---------------------------------");
+
+        // Print total
+        System.out.println("Total Inventory Value = $ " + String.format("%,.2f", totalValue));
+    }
+}
